@@ -20,13 +20,30 @@
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Excluding Keywords" />
       </mat-form-field>
-      <mat-form-field  class="example-full-width">
+      <mat-form-field class="example-full-width">
         <mat-label>Location</mat-label>
         <mat-select multiple>
           <mat-option>Mumbai</mat-option>
           <mat-option>Pune</mat-option>
         </mat-select>
       </mat-form-field>
+      <div class="example-full-width">
+        <mat-form-field class="example-half-width">
+          <input matInput placeholder="Min Exp" />
+        </mat-form-field>
+        <mat-form-field class="example-half-width float-right">
+          <input matInput placeholder="Max Exp" />
+        </mat-form-field>
+      </div>
+      <div class="example-full-width">
+        <mat-form-field class="example-half-width">
+          <input matInput placeholder="Min Salary" />
+        </mat-form-field>
+        <mat-form-field class="example-half-width float-right">
+          <input matInput placeholder="Max Salary" />
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary">Submit</button>
     </form>
   </mat-card-content>
 </mat-card>
