@@ -11,4 +11,7 @@ export class AppComponent {
   navigateToCreateJob() {
     this.router.navigate(["create-job"]);
   }
+  navigateToSearch(){
+    this.router.navigate(["search"]);
+  }
 }

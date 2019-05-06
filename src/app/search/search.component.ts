@@ -11,6 +11,8 @@ export class SearchComponent {
 
     }
 
+    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+
     dataSource = [
         {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
         {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
