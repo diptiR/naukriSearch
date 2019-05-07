@@ -6,15 +6,20 @@ import { MatInputModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 
 @NgModule({
     imports: [
         BrowserModule,
+        ReactiveFormsModule,
+        FormsModule,
         MatFormFieldModule,
         MatInputModule,
         BrowserAnimationsModule,
         MatButtonModule,
+        MatCheckboxModule,
         MatCardModule,
         MatSelectModule
     ],
