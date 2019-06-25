@@ -29,8 +29,8 @@
       <mat-form-field class="example-full-width">
         <mat-label>Location</mat-label>
         <mat-select formControlName="location">
-          <mat-option>Mumbai</mat-option>
-          <mat-option>Pune</mat-option>
+          <mat-option value="Mumbai">Mumbai</mat-option>
+          <mat-option value="Pune">Pune</mat-option>
         </mat-select>
       </mat-form-field>
       <div class="example-full-width">
@@ -50,7 +50,7 @@
         </mat-form-field>
       </div>
       <button mat-raised-button (click)="createSkill()" color="primary">Submit</button>
+      {{message}}
     </form>
   </mat-card-content>
-  {{jobSpecification.value | json}}
 </mat-card>
