@@ -1,37 +1,29 @@
-import { Component, OnInit } from "@angular/core";
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Component, OnInit } from '@angular/core';
+import { RequirementService } from './requirement.service';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { DataSource } from '@angular/cdk/collections';
+import { Requirement } from './skill.model';
 @Component({
-    "selector": "search",
-    "templateUrl": "search.html",
-    "styleUrls": ["./search.css"]
+    selector: 'search',
+    templateUrl: './search.html',
+    styleUrls: ['./search.css']
 })
 
 export class SearchComponent implements OnInit {
-    displayedColumns: string[] = ['title'];
-    data: any = [];
-    constructor(private http: HttpClient) { }
-
-    getRepoIssues() {
-        return this.http.get("http://localhost:3000/skills");
-    }
+    dataSource = new UserDataSource(this.userService);
+    displayedColumns = ['title', 'anyKeywords', 'turnAnyKeyOn', 'allKeywords', "excludingKeywords", "location", "minExp", "maxExp", "minSal", "maxSal"];
+    constructor(private userService: RequirementService) { }
 
     ngOnInit() {
-        this.getRepoIssues().subscribe((response) => {
-            this.data = response;
-        })
     }
-
-    search(skill) {
-        this.http.post("http://localhost:3000/search-skill", skill, {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/json'
-            })
-        }).subscribe((response) => {
-            console.log(response);
-        })
+}
+export class UserDataSource extends DataSource<any> {
+    constructor(private userService: RequirementService) {
+        super();
     }
-
-
-
+    connect(): Observable<Requirement[]> {
+        return this.userService.getRequirements();
+    }
+    disconnect() { }
 }

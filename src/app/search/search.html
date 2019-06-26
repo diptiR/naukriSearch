@@ -1,38 +1,68 @@
-<mat-card class="matCard">
-  <mat-card-header>
-    <mat-card-title>Search Job Description</mat-card-title>
-  </mat-card-header>
-
-  <table border="1">
-    <thead>
-      <tr>
-        <td>Title</td>
-        <td>AllKeywords</td>
-        <td>AnyKeywords</td>
-        <td>ExcludingKeywords</td>
-        <td>Location</td>
-        <td>Min Experience</td>
-        <td>Max Experience</td>
-        <td>Min Salary</td>
-        <td>Max Salary</td>
-        <td></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let skill of data">
-        <td>{{skill.title}}</td>
-        <td>{{skill.allKeywords}}</td>
-        <td>{{skill.anyKeywords}}</td>
-        <td>{{skill.excludingKeywords}}</td>
-        <td>{{skill.location}}</td>
-        <td>{{skill.minExp}}</td>
-        <td>{{skill.maxExp}}</td>
-        <td>{{skill.minSal}}</td>
-        <td>{{skill.maxSal}}</td>
-        <td>
-          <button type="button" (click)="search(skill)">Search</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</mat-card>
+<div>
+  <br>
+  <br>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.title }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="anyKeywords">
+      <mat-header-cell *matHeaderCellDef> Any Keywords </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.anyKeywords }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="turnAnyKeyOn">
+      <mat-header-cell *matHeaderCellDef> Turn Any Key On </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.turnAnyKeyOn }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="allKeywords">
+      <mat-header-cell *matHeaderCellDef> All Keywords </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.allKeywords }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="excludingKeywords">
+      <mat-header-cell *matHeaderCellDef> Excluding Keywords </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.excludingKeywords }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.location }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="minExp">
+      <mat-header-cell *matHeaderCellDef> Minimum Experience </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.minExp }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="maxExp">
+      <mat-header-cell *matHeaderCellDef> Maximum Experience </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.maxExp }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="minSal">
+      <mat-header-cell *matHeaderCellDef> Minimum Salary </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.minSal }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="maxSal">
+      <mat-header-cell *matHeaderCellDef> Maximum Salary </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.maxSal }}
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
