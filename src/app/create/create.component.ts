@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class CreateJobComponent implements OnInit {
-    jobSpecification: FormGroup; message: string;
+    jobSpecification: FormGroup; showMsg: boolean;
 
     constructor(private fb: FormBuilder, private http: HttpClient) { }
 
@@ -19,7 +19,8 @@ export class CreateJobComponent implements OnInit {
                 'Content-Type': 'application/json'
             })
         }).subscribe((response) => {
-            this.message = "Skill is added successfully";
+            this.showMsg = true;
+            this.jobSpecification.reset();
         })
     }
 

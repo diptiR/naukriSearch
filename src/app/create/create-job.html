@@ -9,20 +9,25 @@
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <input
-          matInput formControlName="anyKeywords"
+          matInput
+          formControlName="anyKeywords"
           placeholder="Any Keywords - Skills, Designation, Role"
         />
       </mat-form-field>
-      <mat-checkbox formControlName="turnAnyKeyOn">Turn Boolean On</mat-checkbox>
+      <mat-checkbox formControlName="turnAnyKeyOn"
+        >Turn Boolean On</mat-checkbox
+      >
       <mat-form-field class="example-full-width">
         <input
-          matInput formControlName="allKeywords"
+          matInput
+          formControlName="allKeywords"
           placeholder="All Keywords - Skills, Designation, Role"
         />
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <input
-          matInput formControlName="excludingKeywords"
+          matInput
+          formControlName="excludingKeywords"
           placeholder="Excluding Keywords - Skills, Designation, Role"
         />
       </mat-form-field>
@@ -35,22 +40,44 @@
       </mat-form-field>
       <div class="example-full-width">
         <mat-form-field class="example-half-width">
-          <input formControlName="minExp" matInput placeholder="Minimum Experience (Years)" />
+          <input
+            formControlName="minExp"
+            matInput
+            placeholder="Minimum Experience (Years)"
+          />
         </mat-form-field>
         <mat-form-field class="example-half-width float-right">
-          <input formControlName="maxExp" matInput placeholder="Maximum Experience (Years)" />
+          <input
+            formControlName="maxExp"
+            matInput
+            placeholder="Maximum Experience (Years)"
+          />
         </mat-form-field>
       </div>
       <div class="example-full-width">
         <mat-form-field class="example-half-width">
-          <input formControlName="minSal" matInput placeholder="Minimum Salary (Lakhs)" />
+          <input
+            formControlName="minSal"
+            matInput
+            placeholder="Minimum Salary (Lakhs)"
+          />
         </mat-form-field>
         <mat-form-field class="example-half-width float-right">
-          <input formControlName="maxSal" matInput placeholder="Maximum Salary (Lakhs)" />
+          <input
+            formControlName="maxSal"
+            matInput
+            placeholder="Maximum Salary (Lakhs)"
+          />
         </mat-form-field>
       </div>
-      <button mat-raised-button (click)="createSkill()" color="primary">Submit</button>
-      {{message}}
+      <button mat-raised-button (click)="createSkill()" color="primary">
+        Submit
+      </button>
+      <br />
+      <br />
+      <mat-error *ngIf="showMsg">
+        Skill is successfully created
+      </mat-error>
     </form>
   </mat-card-content>
 </mat-card>
