@@ -12,7 +12,7 @@ import { Requirement } from './skill.model';
 
 export class SearchComponent implements OnInit {
     dataSource = new UserDataSource(this.userService);
-    displayedColumns = ['title', 'anyKeywords', 'turnAnyKeyOn', 'allKeywords', "excludingKeywords", "location", "minExp", "maxExp", "minSal", "maxSal"];
+    displayedColumns = ['title', 'anyKeywords', 'turnAnyKeyOn', 'allKeywords', "excludingKeywords", "location", "minExp", "maxExp", "minSal", "maxSal", "propertiesFile"];
     constructor(private userService: RequirementService) { }
 
     ngOnInit() {

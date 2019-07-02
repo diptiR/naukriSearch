@@ -1,7 +1,20 @@
 <div>
-  <br>
-  <br>
+  <br />
+  <br />
+  <br />
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Option 1</mat-radio-button>
+        </mat-radio-group>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Option 1</mat-radio-button>
+        </mat-radio-group>
+      </td>
+    </ng-container>
     <ng-container matColumnDef="title">
       <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
@@ -60,6 +73,12 @@
       <mat-header-cell *matHeaderCellDef> Maximum Salary </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
         {{ requirement.maxSal }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="propertiesFile">
+      <mat-header-cell *matHeaderCellDef> Properties File </mat-header-cell>
+      <mat-cell *matCellDef="let requirement">
+        {{ requirement.propertiesFile }}
       </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
