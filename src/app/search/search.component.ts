@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RequirementService } from './requirement.service';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
@@ -7,15 +7,26 @@ import { Requirement } from './skill.model';
 @Component({
     selector: 'search',
     templateUrl: './search.html',
-    styleUrls: ['./search.css']
+    styleUrls: ['./search.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class SearchComponent implements OnInit {
+    skillFile;
     dataSource = new UserDataSource(this.userService);
     displayedColumns = ['title', 'anyKeywords', 'turnAnyKeyOn', 'allKeywords', "excludingKeywords", "location", "minExp", "maxExp", "minSal", "maxSal", "propertiesFile"];
     constructor(private userService: RequirementService) { }
 
     ngOnInit() {
+    }
+
+    searchProfiles(){
+        let payload = {
+            "propertiesFile": this.skillFile
+        }
+        this.userService.searchProfiles(payload).subscribe((response) => {
+            console.log(response);
+        })
     }
 }
 export class UserDataSource extends DataSource<any> {

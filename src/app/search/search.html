@@ -6,7 +6,11 @@
     <ng-container matColumnDef="title">
       <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
-        {{ requirement.title }}
+        <mat-radio-group [(ngModel)]="skillFile" name="skillPropertiesFiles">
+          <mat-radio-button [value]="requirement.propertiesFile">
+            <span [title]="requirement.title">{{ requirement.title }}</span>
+          </mat-radio-button>
+        </mat-radio-group>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="anyKeywords">
@@ -78,4 +82,6 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
+  <br>
+  <button mat-flat-button color="primary" (click)="searchProfiles()">Search Profiles</button>
 </div>

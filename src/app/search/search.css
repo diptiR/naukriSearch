@@ -26,3 +26,9 @@
     border-right: 1px solid #cccccc;
     padding-left: 10px;
   }
+
+  .mat-radio-label-content{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 75px;
+  }

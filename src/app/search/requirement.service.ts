@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Requirement } from './skill.model';
@@ -11,6 +11,14 @@ export class RequirementService {
 
     getRequirements(): Observable<Requirement[]> {
         return this.http.get<Requirement[]>(this.serviceUrl);
+    }
+
+    searchProfiles(propertiesFileName) {
+        return this.http.post("http://localhost:3000/search-skill", propertiesFileName, {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        })
     }
 
 }
