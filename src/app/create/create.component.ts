@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
     "selector": "create-job",
@@ -14,7 +15,7 @@ export class CreateJobComponent implements OnInit {
     constructor(private fb: FormBuilder, private http: HttpClient) { }
 
     createSkill() {
-        this.http.post("http://localhost:3000/create-skill", this.jobSpecification.value, {
+        this.http.post(environment.apiUrl + "create-skill", this.jobSpecification.value, {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json'
             })
