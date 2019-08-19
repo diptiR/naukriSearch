@@ -36,7 +36,10 @@ export class CreateJobComponent implements OnInit {
             'minExp': [],
             'maxExp': [],
             'minSalary': [],
-            'maxSalary': []
+            'maxSalary': [],
+            'MultiLocation': [false],
+            'useAllKeys': [true],
+            'isExclude': [true]
         })
     }
 
