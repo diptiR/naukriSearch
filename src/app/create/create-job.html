@@ -24,6 +24,9 @@
           placeholder="All Keywords - Skills, Designation, Role"
         />
       </mat-form-field>
+      <mat-checkbox formControlName="useAllKeys"
+        >Use All Keys</mat-checkbox
+      >
       <mat-form-field class="example-full-width">
         <input
           matInput
@@ -31,6 +34,8 @@
           placeholder="Excluding Keywords - Skills, Designation, Role"
         />
       </mat-form-field>
+      <mat-checkbox formControlName="isExclude"
+        >Is Exclude</mat-checkbox>
       <mat-form-field class="example-full-width">
         <mat-label>Location</mat-label>
         <mat-select formControlName="Location">
