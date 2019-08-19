@@ -13,10 +13,10 @@
         </mat-radio-group>
       </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="anyKeywords">
+    <ng-container matColumnDef="AnyKeys">
       <mat-header-cell *matHeaderCellDef> Any Keywords </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
-        {{ requirement.anyKeywords }}
+        {{ requirement.AnyKeys }}
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="turnAnyKeyOn">
@@ -25,24 +25,24 @@
         {{ requirement.turnAnyKeyOn }}
       </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="allKeywords">
+    <ng-container matColumnDef="AllKeys">
       <mat-header-cell *matHeaderCellDef> All Keywords </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
-        {{ requirement.allKeywords }}
+        {{ requirement.AllKeys }}
       </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="excludingKeywords">
+    <ng-container matColumnDef="excludeKey">
       <mat-header-cell *matHeaderCellDef>
         Excluding Keywords
       </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
-        {{ requirement.excludingKeywords }}
+        {{ requirement.excludeKey }}
       </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="location">
+    <ng-container matColumnDef="Location">
       <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
-        {{ requirement.location }}
+        {{ requirement.Location }}
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="minExp">
@@ -61,16 +61,16 @@
         {{ requirement.maxExp }}
       </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="minSal">
+    <ng-container matColumnDef="minSalary">
       <mat-header-cell *matHeaderCellDef> Minimum Salary </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
-        {{ requirement.minSal }}
+        {{ requirement.minSalary }}
       </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="maxSal">
+    <ng-container matColumnDef="maxSalary">
       <mat-header-cell *matHeaderCellDef> Maximum Salary </mat-header-cell>
       <mat-cell *matCellDef="let requirement">
-        {{ requirement.maxSal }}
+        {{ requirement.maxSalary }}
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="propertiesFile">

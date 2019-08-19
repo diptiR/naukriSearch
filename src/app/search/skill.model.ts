@@ -1,12 +1,12 @@
 export interface Requirement {
     title: string;
-    anyKeywords: string;
+    AnyKeys: string;
     turnAnyKeyOn: string;
-    allkeywords: string;
-    excludingKeywords: string;
-    location: string;
+    AllKeys: string;
+    excludeKey: string;
+    Location: string;
     minExp: string;
     maxExp: string;
-    minSal: string;
-    maxSal: string;
+    minSalary: string;
+    maxSalary: string;
 }

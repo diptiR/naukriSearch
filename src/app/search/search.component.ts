@@ -14,7 +14,7 @@ import { Requirement } from './skill.model';
 export class SearchComponent implements OnInit {
     skillFile;
     dataSource = new UserDataSource(this.userService);
-    displayedColumns = ['title', 'anyKeywords', 'turnAnyKeyOn', 'allKeywords', "excludingKeywords", "location", "minExp", "maxExp", "minSal", "maxSal", "propertiesFile"];
+    displayedColumns = ['title', 'AnyKeys', 'turnAnyKeyOn', 'AllKeys', 'excludeKey', 'Location', 'minExp', 'maxExp', 'minSalary', 'maxSalary', 'propertiesFile'];
     constructor(private userService: RequirementService) { }
 
     ngOnInit() {
@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
 
     searchProfiles(){
         let payload = {
-            "propertiesFile": this.skillFile
+            'propertiesFile': this.skillFile
         }
         this.userService.searchProfiles(payload).subscribe((response) => {
             console.log(response);

@@ -10,7 +10,7 @@
       <mat-form-field class="example-full-width">
         <input
           matInput
-          formControlName="anyKeywords"
+          formControlName="AnyKeys"
           placeholder="Any Keywords - Skills, Designation, Role"
         />
       </mat-form-field>
@@ -20,20 +20,20 @@
       <mat-form-field class="example-full-width">
         <input
           matInput
-          formControlName="allKeywords"
+          formControlName="AllKeys"
           placeholder="All Keywords - Skills, Designation, Role"
         />
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <input
           matInput
-          formControlName="excludingKeywords"
+          formControlName="excludeKey"
           placeholder="Excluding Keywords - Skills, Designation, Role"
         />
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Location</mat-label>
-        <mat-select formControlName="location">
+        <mat-select formControlName="Location">
           <mat-option value="Mumbai">Mumbai</mat-option>
           <mat-option value="Pune">Pune</mat-option>
         </mat-select>
@@ -57,14 +57,14 @@
       <div class="example-full-width">
         <mat-form-field class="example-half-width">
           <input
-            formControlName="minSal"
+            formControlName="minSalary"
             matInput
             placeholder="Minimum Salary (Lakhs)"
           />
         </mat-form-field>
         <mat-form-field class="example-half-width float-right">
           <input
-            formControlName="maxSal"
+            formControlName="maxSalary"
             matInput
             placeholder="Maximum Salary (Lakhs)"
           />

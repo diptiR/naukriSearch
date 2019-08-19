@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 @Component({
-    "selector": "create-job",
-    "templateUrl": "create-job.html",
-    "styleUrls": ["./create-job.css"]
+    'selector': 'create-job',
+    'templateUrl': 'create-job.html',
+    'styleUrls': ['./create-job.css']
 })
 
 export class CreateJobComponent implements OnInit {
@@ -15,7 +15,7 @@ export class CreateJobComponent implements OnInit {
     constructor(private fb: FormBuilder, private http: HttpClient) { }
 
     createSkill() {
-        this.http.post(environment.apiUrl + "create-skill", this.jobSpecification.value, {
+        this.http.post(environment.apiUrl + 'create-skill', this.jobSpecification.value, {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json'
             })
@@ -27,16 +27,16 @@ export class CreateJobComponent implements OnInit {
 
     ngOnInit() {
         this.jobSpecification = this.fb.group({
-            "title": [],
-            "anyKeywords": [],
-            "turnAnyKeyOn": [],
-            "allKeywords": [],
-            "excludingKeywords": [],
-            "location": [],
-            "minExp": [],
-            "maxExp": [],
-            "minSal": [],
-            "maxSal": []
+            'title': [],
+            'AnyKeys': [],
+            'turnAnyKeyOn': [],
+            'AllKeys': [],
+            'excludeKey': [],
+            'Location': [],
+            'minExp': [],
+            'maxExp': [],
+            'minSalary': [],
+            'maxSalary': []
         })
     }
 
