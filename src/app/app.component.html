@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row text-center">
     <div class="col-md-12 pt-2">
-      <button (click)="navigateToCreateJob()" mat-raised-button>
+      <button routerLink="/create-job" routerLinkActive="active"
+              mat-raised-button>
         Create Job Description
       </button>
       &nbsp; &nbsp;
-      <button (click)="navigateToSearch()" mat-raised-button>
-          View Requirements
+      <button routerLink="/search" routerLinkActive="active"
+              mat-raised-button>
+        View Requirements
       </button>
     </div>
   </div>

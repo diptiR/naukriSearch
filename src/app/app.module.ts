@@ -11,6 +11,7 @@ import { SearchModule } from './search/search.module';
 import { SearchComponent } from './search/search.component';
 
 const ROUTES = [
+  { path: '', redirectTo: "create-job", pathMatch:'full' },
   { path: "create-job", component: CreateJobComponent },
   { path: "search", component: SearchComponent }
 ]
